@@ -84,7 +84,7 @@
 
         /* Header Styles */
         header {
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -98,6 +98,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .navbar-left, .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-right {
+            gap: 1.5rem;
         }
 
         .logo {
@@ -159,6 +168,7 @@
             align-items: center;
             gap: 0.5rem;
             box-shadow: 0 4px 6px rgba(99, 102, 241, 0.3);
+            white-space: nowrap;
         }
 
         .download-btn:hover {
@@ -239,13 +249,13 @@
             background-color: rgba(255, 255, 255, 0.03);
             backdrop-filter: none;
             background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-}
+        }
 
         .feature-card:hover {
             transform: translateY(-10px);
             border-color: rgba(99, 102, 241, 0.3);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-}
+        }
 
         .feature-icon {
             width: 60px;
@@ -258,7 +268,7 @@
             margin-bottom: 1.5rem;
             font-size: 1.5rem;
             overflow: hidden;
-}
+        }
 
         .feature-card h3 {
             font-size: 1.5rem;
@@ -451,6 +461,33 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            /* Новые стили для мобильной навигации */
+            .navbar-right {
+                gap: 1rem;
+            }
+            
+            .download-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                margin-left: auto;
+            }
+            
+            .navbar {
+                padding: 0.5rem 0;
+            }
+            
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
         }
 
         @media (max-width: 480px) {
@@ -463,8 +500,8 @@
             }
             
             .download-btn {
-                padding: 0.75rem 1rem;
-                font-size: 0.9rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
             }
             
             .feature-card {
@@ -473,6 +510,10 @@
 
             .donation-card {
                 padding: 1.5rem;
+            }
+            
+            .logo {
+                font-size: 1.1rem;
             }
         }
 
@@ -496,24 +537,28 @@
     <header>
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">
-                    <i class="fas fa-play-circle logo-icon"></i>
-                    <span>AniNova</span>
-                </a>
+                <div class="navbar-left">
+                    <a href="#" class="logo">
+                        <i class="fas fa-play-circle logo-icon"></i>
+                        <span>AniNova</span>
+                    </a>
+                </div>
                 
-                <ul class="nav-links">
-                    <li><a href="#features">Возможности</a></li>
-                    <li><a href="#donation">Поддержать</a></li>
-                </ul>
-                
-                <a href="https://github.com/aninova-app/main/releases/download/AniNovaSetupv1.0.0/AniNova.rar" 
-                    class="download-btn">
-                    <i class="fas fa-download"></i> Скачать сейчас
-                </a>
-                
-                <button class="mobile-toggle">
-                    <i class="fas fa-bars"></i>
-                </button>
+                <div class="navbar-right">
+                    <ul class="nav-links">
+                        <li><a href="#features">Возможности</a></li>
+                        <li><a href="#donation">Поддержать</a></li>
+                    </ul>
+                    
+                    <a href="https://github.com/aninova-app/main/releases/download/AniNovaSetupv1.0.0/AniNova.rar" 
+                        class="download-btn">
+                        <i class="fas fa-download"></i> Скачать сейчас
+                    </a>
+                    
+                    <button class="mobile-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
             </nav>
         </div>
     </header>
@@ -636,7 +681,6 @@
                     class="download-btn">
                     <i class="fas fa-download"></i> Скачать сейчас
                 </a>
-                </div>
             </div>
             
             <div class="copyright">
